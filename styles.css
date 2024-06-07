@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    background-image: url('images/mikasa.jpg');
+    background-size: cover;
+    animation: fadeInAnimation ease-in 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+h1{
+    font-family: "Karla";
+}
+.start-btn{
+    background-color: aliceblue;
+    border: 1px solid black;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    color: black;
+    margin: 40px;
+    font-size: 20px;
+    border-radius: 8px;
+    transition: all ease-in 0.2s;
+}
+.start-btn:hover{
+    background-color:black;
+    border: 1px solid rgb(196, 181, 196);
+    color: white;
+}
+
+.app{
+    padding: 30px;
+    display: flex;
+    background: rgb(0, 0,0,0.5);
+    width: 900px;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: -30px;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.ques-ans{
+    animation: fadeInAnimation ease-in 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    opacity: 0;
+    transition: opacity ease-in 5s;
+
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.para{
+    font-family: "Barlow";
+    padding: 30px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.ques-img-div{
+    text-align: center;
+}
+.ques-img{
+    width: 300px;
+}
+
+.btn{
+    font-family: "Karla";
+    font-weight: bold;
+    width: 500px;
+    margin: 20px auto;
+    height: 35px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    transition: all ease-in 0.3s;
+    font-size: 17px;
+}
+.correct{
+    background-color: green;
+    color: white;
+    opacity: 0.7;
+}
+.wrong{
+    background-color: crimson;
+    color: white;
+    opacity: 0.7;
+}
+
+.btn:hover{
+    background-color: black;
+    color: white;
+}
+.start-quiz{
+    display: flex;
+    flex-direction: column;
+}
+.start-quiz img{
+    width: 200px;
+}
