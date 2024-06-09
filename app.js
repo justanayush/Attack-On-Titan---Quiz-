@@ -220,32 +220,64 @@ const assets = [
         ]
     }
 ]
-
+const app = document.querySelector('app');
 const startBtn = document.querySelector('.start-btn');
 const start = document.querySelector('.start-quiz');
 const quesAns = document.querySelector('.ques-ans');
 const question = document.querySelector('.ques');
-const option_01 = document.querySelector('.option-01');
-const option_02 = document.querySelector('.option-02');
-const option_03 = document.querySelector('.option-03');
-const option_04 = document.querySelector('.option-04');
 const quesImg = document.querySelector('.ques-img');
 const optionBtn = document.querySelector('.btn');
 const options = document.querySelector('.options');
+const nextBtn = document.querySelector('.next-button');
+const nextBtnDiv = document.querySelector('.button-div');
+
+let currentQuestionIndex = 0;
+let score = 0;
 
 function startQuiz(){
-    let quesNum = 1;
-    let score = 1;
-    let arrIndex = quesNum - 1;
-    let ops = assets[arrIndex].options;
-    questionDisplay(arrIndex,ops);
-    
-   
+    currentQuestionIndex = 0;
+    score = 0;
+    nextBtn.innerHTML = 'Next';
+    nextBtnDiv.style.display = 'none';
+    displayQuestion(currentQuestionIndex,score);
 }
 
-function questionDisplay(arrIndex,ops){
-    // Will Continue //
-    
+function displayQuestion(currentQuestionIndex,score){
+        ops = assets[currentQuestionIndex];
+        question.innerHTML = ops.question;
+
+        ops.options.forEach((option)=>{
+            const button = document.createElement('button');
+            button.innerHTML = option.text;
+            button.classList.add('btn');
+            options.appendChild(button);
+        })
+}
+
+
+nextBtn.addEventListener('click',()=>{
+    currentQuestionIndex++;
+    if(currentQuestionIndex < assets.length){
+        resetQuestions();
+    }else{
+        app.style.display = 'none';
+        resultScreen.style.display = 'block';
+        restartButton.style.display = 'block';
+    }
+})
+
+// restartBtn.addEventListener('click',()=>){
+//     startQuiz();
+//     app.style.display = 'block';
+//     resultScreen.style.display = 'none';
+//     restartButton.style.display = 'none';
+// }
+
+function resetQuestions(){
+    nextBtnDiv.style.display = 'none';
+    while(options.firstChild){
+        options.removeChild(options.firstChild);
+    }
 }
 
 startBtn.addEventListener('click',()=>{
@@ -253,5 +285,5 @@ startBtn.addEventListener('click',()=>{
     start.style.display  = 'none';
     quesAns.style.display = 'block';
     startQuiz();
-
 })
+

@@ -11,6 +11,7 @@ body{
     margin-top: 5rem;
     background-image: url('images/mikasa.jpg');
     background-size: cover;
+    background: no-repeat;
     animation: fadeInAnimation ease-in 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -52,6 +53,7 @@ h1{
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    margin-bottom: 20px;
 }
 .ques-ans{
     animation: fadeInAnimation ease-in 0.5s;
@@ -125,4 +127,30 @@ h1{
 }
 .start-quiz img{
     width: 200px;
+}
+
+.next-button{
+    font-family: 'Karla';
+    padding: 10px 25px;
+    border-radius: 3px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    color: black;
+    background-color: cadetblue;
+    cursor: pointer;
+    transition: all ease-in 0.3s;
+    border: 2px solid white;
+}
+
+.next-button:hover{
+    background-color: rgb(27, 73, 91);
+    color:white;
+}
+
+.button-div{
+    display: flex;
+    justify-content: center;
+    display: none;
 }
