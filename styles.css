@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
     color: white;
+    animation: fadeInAnimation ease-in 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 body{
     background-image: url('images/mikasa.gif');
@@ -10,16 +13,11 @@ body{
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
-    animation: fadeInAnimation ease-in 0.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
 }
 
-.first-container{
-    display: none;
-}
 h1{
     font-family: "Karla";
+    margin-top: 30px;
 }
 .start-btn{
     background-color: aliceblue;
@@ -35,18 +33,22 @@ h1{
 }
 .start-btn:hover{
     background-color:black;
-    border: 1px solid rgb(196, 181, 196);
+    border: 2px solid rgb(196, 181, 196);
     color: white;
 }
 
 .app{
-    padding: 30px;
+    padding: 10px;
     display: flex;
     background: rgb(0, 0,0,0.5);
-    width: 900px;
+    width: 800px;
+    max-height: fit-content;
     justify-content: center;
     border-radius: 10px;
-    margin: 60px auto;
+    margin: 35px auto;
+    animation: fadeInAnimation ease-in 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .options{
@@ -75,31 +77,38 @@ h1{
 
 .para{
     font-family: "Barlow";
-    padding: 30px;
+    padding: 20px;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
+    max-width: 100%;
+    margin-top: 10px;
 }
 
 .ques-img-div{
     text-align: center;
 }
 .ques-img{
-    width: 300px;
+    max-width: 300px;
+    object-fit: cover;
+    object-position: center;
+    max-height: 180px;
+    margin: 10px auto;
+    
 }
 
 .btn{
     font-family: "Karla";
     font-weight: bold;
-    width: 500px;
-    margin: 20px auto;
+    width: 450px;
+    margin: 18px auto;
     height: 35px;
     cursor: pointer;
     background-color: white;
     color: black;
     border: none;
     border-radius: 5px;
-    transition: all ease-in 0.3s;
-    font-size: 17px;
+    transition: background-color ease-in 0.2s;
+    font-size: 15px;
 }
 .correct{
     background-color: green;
@@ -117,9 +126,23 @@ h1{
 .start-quiz{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 70vh;
+    margin: auto 10px;
+    align-content: center;
 }
 .start-quiz img{
     width: 200px;
+}
+.button-div{
+    display: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: -10px;
 }
 
 .next-button{
@@ -135,7 +158,9 @@ h1{
     cursor: pointer;
     transition: all ease-in 0.3s;
     border: 2px solid white;
-    margin-left: 377px;
+    animation: fadeInAnimation ease-in 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
 .next-button:hover{
@@ -193,6 +218,7 @@ h1{
     color :black;
     transition: all ease-in 0.2s;
     cursor: pointer;
+    margin:15px;
 }
 .restart:hover{
     background-color: black;

@@ -22,7 +22,7 @@ const assets = [
         ]
     },
     {
-        image: "",
+        image: "images/02.gif",
         question: "What is the name of the island where most of the story takes place?",
         options: [
             {
@@ -30,11 +30,11 @@ const assets = [
                 isCorrect: false
             },
             {
-                text: "Paradise",
+                text: "Eldia",
                 isCorrect: false
             },
             {
-                text: "Paradise Island",
+                text: "Heaven Island",
                 isCorrect: false
             },
             {
@@ -44,7 +44,7 @@ const assets = [
         ]
     },
     {
-        image: "",
+        image: "images/03.jpg",
         question: "Who was the previous holder of the Attack Titan before Eren Yeager?",
         options: [
             {
@@ -66,7 +66,7 @@ const assets = [
         ]
     },
     {
-        image: "",
+        image: "images/04.gif",
         question: "What is the power of the Founding Titan?",
         options: [
             {
@@ -88,7 +88,7 @@ const assets = [
         ]
     },
     {
-        image: "",
+        image: "images/05.jpg",
         question: "Who is the commander of the Survey Corps after Erwin Smith?",
         options: [
             {
@@ -110,12 +110,12 @@ const assets = [
         ]
     },
     {
-        image: "",
+        image: "images/06.jpg",
         question: "What event triggers Eren's transformation into a Titan for the first time?",
         options: [
             {
                 text: "His Mother's Death",
-                isCorrect: true
+                isCorrect: false
             },
             {
                 text: "The Fall of Wall Maria",
@@ -132,7 +132,7 @@ const assets = [
         ]
     },
     {
-        image: "",
+        image: "images/07.jpg",
         question: "Which Titan is known for its speed and agility?",
         options: [
             {
@@ -154,7 +154,7 @@ const assets = [
         ]
     },
     {
-        image: "",
+        image: "images/08.gif",
         question: "Who kills the Beast Titan for the first time?",
         options: [
             {
@@ -176,7 +176,7 @@ const assets = [
         ]
     },
     {
-        image: "",
+        image: "images/09.jpg",
         question: "What is Historia Reiss's true identity?",
         options: [
             {
@@ -198,7 +198,7 @@ const assets = [
         ]
     },
     {
-        image: "",
+        image: "images/10.jpg",
         question: "What secret is hidden in the basement of Eren's house?",
         options: [
             {
@@ -241,13 +241,14 @@ let score = 0;
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
+    nextBtnDiv.style.display = 'none';
     displayQuestion(currentQuestionIndex,score);
 }
 
 function displayQuestion(currentQuestionIndex,score){
         ops = assets[currentQuestionIndex];
         question.innerHTML = ops.question;
-
+        quesImg.setAttribute('src', `${ops.image}`);
         ops.options.forEach((option)=>{
             const button = document.createElement('button');
             button.innerHTML = option.text;
@@ -296,6 +297,7 @@ nextBtn.addEventListener('click',()=>{
 })
 
 restartBtn.addEventListener('click', ()=>{
+    document.body.style.backgroundImage = 'url("images/mikasa.gif")';
     start.style.display = 'block';
     trueFan.style.display = 'none';
     resultSection.style.display = 'none';
