@@ -249,8 +249,8 @@ h1{
     .app{
         width: 370px;
         max-height: fit-content;
-        margin-top: 60px;
-    
+        margin: auto 5px;
+        margin-top: 25px;
     }
     body{
         height: 100vh;
@@ -265,13 +265,13 @@ h1{
         padding: 8px 20px;
     }
     .ques-img{
-        width: 200px;
+        width: 300px;
     }
     .para{
-        font-size: 24px;
+        font-size: 25px;
     }
     .start-quiz{
-        height: 70vh;
+        height: 60vh;
     }
 
     .start-btn{
@@ -282,7 +282,7 @@ h1{
         font-size: 25px;
     }
     .head img{
-        width: 250px;
+        width: 300px;
     }
     .score{
         font-size: 22px;
