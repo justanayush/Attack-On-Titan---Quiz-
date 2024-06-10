@@ -249,7 +249,7 @@ h1{
     .app{
         width: 370px;
         max-height: fit-content;
-        margin: 60px 10px 5px 5px;
+        margin-top: 60px;
     
     }
     body{
