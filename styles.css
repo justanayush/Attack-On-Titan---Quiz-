@@ -5,18 +5,19 @@
     color: white;
 }
 body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5rem;
-    background-image: url('images/mikasa.jpg');
+    background-image: url('images/mikasa.gif');
     background-size: cover;
-    background: no-repeat;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
     animation: fadeInAnimation ease-in 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
+.first-container{
+    display: none;
+}
 h1{
     font-family: "Karla";
 }
@@ -45,7 +46,7 @@ h1{
     width: 900px;
     justify-content: center;
     border-radius: 10px;
-    margin-top: -30px;
+    margin: 60px auto;
 }
 
 .options{
@@ -56,18 +57,12 @@ h1{
     margin-bottom: 20px;
 }
 .ques-ans{
-    animation: fadeInAnimation ease-in 0.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     display: none;
-    opacity: 0;
-    transition: opacity ease-in 5s;
-
 }
 @keyframes fadeInAnimation {
     0% {
@@ -109,15 +104,13 @@ h1{
 .correct{
     background-color: green;
     color: white;
-    opacity: 0.7;
 }
 .wrong{
     background-color: crimson;
     color: white;
-    opacity: 0.7;
 }
 
-.btn:hover{
+.btn:hover:not([disabled]){
     background-color: black;
     color: white;
 }
@@ -142,6 +135,7 @@ h1{
     cursor: pointer;
     transition: all ease-in 0.3s;
     border: 2px solid white;
+    margin-left: 377px;
 }
 
 .next-button:hover{
@@ -149,8 +143,68 @@ h1{
     color:white;
 }
 
-.button-div{
+
+.result-section{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     display: none;
+}
+.result-section img{
+    width: 250px;
+    border-radius: 5px;
+    margin: 20px auto;
+}
+
+.score{
+    font-family: 'Barlow';
+    font-size: 30px;
+    text-align: center;
+}
+
+.true-fan{
+    font-family: 'Karla';
+    font-size: 25px;
+    color: black;
+    background-color: aqua;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 14px;
+    font-weight: bold;
+    display: none;
+}
+
+.score-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.restart{
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Barlow';
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: aliceblue;
+    color :black;
+    transition: all ease-in 0.2s;
+    cursor: pointer;
+}
+.restart:hover{
+    background-color: black;
+    color: white;
+}
+.head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.head h1{
+    text-align: center;
 }

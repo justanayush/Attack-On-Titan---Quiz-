@@ -220,7 +220,7 @@ const assets = [
         ]
     }
 ]
-const app = document.querySelector('app');
+const app = document.querySelector('.app');
 const startBtn = document.querySelector('.start-btn');
 const start = document.querySelector('.start-quiz');
 const quesAns = document.querySelector('.ques-ans');
@@ -230,6 +230,10 @@ const optionBtn = document.querySelector('.btn');
 const options = document.querySelector('.options');
 const nextBtn = document.querySelector('.next-button');
 const nextBtnDiv = document.querySelector('.button-div');
+const resultSection = document.querySelector('.result-section');
+const restartBtn = document.querySelector('.restart');
+const scored = document.querySelector('.score');
+const trueFan = document.querySelector('.true-fan');
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -237,8 +241,6 @@ let score = 0;
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
-    nextBtn.innerHTML = 'Next';
-    nextBtnDiv.style.display = 'none';
     displayQuestion(currentQuestionIndex,score);
 }
 
@@ -251,27 +253,54 @@ function displayQuestion(currentQuestionIndex,score){
             button.innerHTML = option.text;
             button.classList.add('btn');
             options.appendChild(button);
+            if(option.isCorrect){
+                button.dataset.isCorrect = option.isCorrect;
+            }
+            button.addEventListener('click', optionSelection);
         })
+
+       
 }
 
+function optionSelection(e){
+    Array.from(options.children).forEach((option) =>{
+        if(option.dataset.isCorrect === 'true'){
+            option.classList.add('correct');
+        }
+        option.disabled = true;
+
+    });
+    nextBtnDiv.style.display = 'block';
+    if (e.target.dataset.isCorrect){
+        score+=1;
+    }
+    else{
+        e.target.classList.add('wrong');
+    }
+}
 
 nextBtn.addEventListener('click',()=>{
     currentQuestionIndex++;
     if(currentQuestionIndex < assets.length){
         resetQuestions();
+        displayQuestion(currentQuestionIndex,score);
     }else{
-        app.style.display = 'none';
-        resultScreen.style.display = 'block';
-        restartButton.style.display = 'block';
+        scored.innerHTML = `Your score is ${score}/10`
+        if(score === 10){
+            trueFan.style.display = 'block';
+        }
+        quesAns.style.display = 'none';
+        resultSection.style.display = 'block';
+        restartBtn.classList.add('.next-button');
     }
 })
 
-// restartBtn.addEventListener('click',()=>){
-//     startQuiz();
-//     app.style.display = 'block';
-//     resultScreen.style.display = 'none';
-//     restartButton.style.display = 'none';
-// }
+restartBtn.addEventListener('click', ()=>{
+    start.style.display = 'block';
+    trueFan.style.display = 'none';
+    resultSection.style.display = 'none';
+    resetQuestions();
+});
 
 function resetQuestions(){
     nextBtnDiv.style.display = 'none';
