@@ -247,8 +247,7 @@ h1{
 
 @media screen and (max-width: 540px) {
     .app{
-        width: 300px;
-        height: 100vh;
+        width: 330px;
     }
     .btn{
         width: 240px;
