@@ -11,8 +11,10 @@ body{
     background-image: url('images/mikasa.gif');
     background-size: cover;
     background-repeat: no-repeat;
+    
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 h1{
@@ -42,6 +44,7 @@ h1{
     display: flex;
     background: rgb(0, 0,0,0.5);
     width: 800px;
+    max-width: 800px;
     max-height: fit-content;
     justify-content: center;
     border-radius: 10px;
@@ -129,7 +132,7 @@ h1{
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 70vh;
+    height: 80vh;
     margin: auto 10px;
     align-content: center;
 }
@@ -233,4 +236,57 @@ h1{
 
 .head h1{
     text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        background-size: auto 100%; /* Adjusts the image height to cover the viewport height */
+        background-position: top center; /* Adjusts the image position */
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .app{
+        width: 300px;
+        height: 100vh;
+    }
+    .btn{
+        width: 240px;
+        text-align: center;
+        height: 28px;
+        font-size: 12px;
+    }
+    .next-button{
+        padding: 8px 20px;
+    }
+    .ques-img{
+        width: 200px;
+    }
+    .para{
+        font-size: 20px;
+    }
+    .start-quiz{
+        height: 100vh;
+    }
+
+    .start-btn{
+        width: 100px;
+        font-size: 18px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    .head img{
+        width: 200px;
+    }
+    .score{
+        font-size: 22px;
+    }
+    .true-fan{
+        font-size: 16px;
+    }
+    .restart{
+        width: 130px;
+        font-size: 15px;
+    }
 }
