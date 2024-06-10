@@ -249,8 +249,8 @@ h1{
     .app{
         width: 370px;
         max-height: fit-content;
-        margin: auto 5px;
-        margin-top: -15px;
+        margin: 60px 5px;
+    
     }
     body{
         height: 100vh;
