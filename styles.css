@@ -256,11 +256,10 @@ h1{
         height: 100vh;
     }
     .btn{
-        width: 270px;
+        width: 290px;
         text-align: center;
-        height: 32px;
+        height: 33px;
         font-size: 15px;
-        padding: 10px;
     }
     .next-button{
         padding: 8px 20px;
