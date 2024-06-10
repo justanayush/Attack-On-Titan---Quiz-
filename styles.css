@@ -251,15 +251,16 @@ h1{
         max-height: fit-content;
         justify-content: center;
         margin: auto 5px;
+        margin-top: -25px;
     }
     body{
         height: 100vh;
     }
     .btn{
-        width: 240px;
+        width: 270px;
         text-align: center;
-        height: 28px;
-        font-size: 12px;
+        height: 32px;
+        font-size: 14px;
     }
     .next-button{
         padding: 8px 20px;
@@ -268,7 +269,7 @@ h1{
         width: 200px;
     }
     .para{
-        font-size: 20px;
+        font-size: 25px;
     }
     .start-quiz{
         height: 70vh;
@@ -282,7 +283,7 @@ h1{
         font-size: 25px;
     }
     .head img{
-        width: 200px;
+        width: 250px;
     }
     .score{
         font-size: 22px;
