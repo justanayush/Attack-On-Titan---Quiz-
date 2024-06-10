@@ -273,6 +273,7 @@ h1{
     }
     .start-quiz{
         height: 70vh;
+        margin: auto;
     }
 
     .start-btn{
